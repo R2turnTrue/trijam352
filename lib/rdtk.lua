@@ -50,6 +50,18 @@ function LdtkLevel:new(ldtkfile, levelindex)
     self.offset_x = ldtkfile.data.levels[levelindex].worldX
     self.offset_y = ldtkfile.data.levels[levelindex].worldY
     self.data = ldtkfile.data.levels[levelindex]
+
+    self.spawn_x = 50 + ldtkfile.data.levels[levelindex].worldX
+    self.spawn_y = 50 + ldtkfile.data.levels[levelindex].worldY
+
+    for i, layer in ipairs(self:getLayers()) do
+        for j, entity in ipairs(layer:getEntities()) do
+            if entity.id == "Spawn" then
+                self.spawn_x = entity.x + ldtkfile.data.levels[levelindex].worldX
+                self.spawn_y = entity.y + ldtkfile.data.levels[levelindex].worldY
+            end
+        end
+    end
 end
 
 ---Get layers in level
@@ -92,4 +104,21 @@ function LdtkLayer:getTiles()
     end
 
     return tiles
+end
+
+function LdtkLayer:getEntities()
+    local entities = {}
+
+    for i, entityInstance in ipairs(self.data.entityInstances) do
+        table.insert(entities, {
+            id = entityInstance.__identifier,
+            x = entityInstance.px[1],
+            y = entityInstance.px[2],
+            width = entityInstance.width,
+            height = entityInstance.height,
+            fieldInstances = entityInstance.fieldInstances
+        })
+    end
+
+    return entities
 end

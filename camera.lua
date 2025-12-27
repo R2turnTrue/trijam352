@@ -44,3 +44,11 @@ end
 function Camera:finish()
     love.graphics.pop()
 end
+
+function Camera:screen_to_world(x, y)
+    return (x * (push._WWIDTH / push._RWIDTH)) + self.x, (y * (push._WHEIGHT / push._RHEIGHT)) + self.y
+end
+
+function Camera:screen_to_world_no_cam_pos(x, y)
+    return (x * (push._WWIDTH / push._RWIDTH)), (y * (push._WHEIGHT / push._RHEIGHT))
+end

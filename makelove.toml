@@ -1,8 +1,8 @@
-name = "r2turntrue-love2d-template"
+name = "trijam352"
 default_targets = ["win32", "win64", "lovejs"]
 build_directory = "makelove-build"
 
 love_files = [
     "::git-ls-tree::",
-    "-*/.*",
+    "-*/.*"
 ]
