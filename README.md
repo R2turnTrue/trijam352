@@ -1,23 +1,17 @@
-# r2turntrue love2d template
+# fixed_input_timing;
 
-love2d template for myself
+[play at itch.io](https://r2turntrue.itch.io/fixed-input-timing)
 
-## included
+> ⏰ The timing has already been determined. CHANGE THE PATH TO REACH THE FLAG!
 
-### opensource libraries
+tiny puzzle platformer game which YOU CAN'T PRESS ANY KEY IN. drag the blue blocks and change path to reach the flag!!
 
-- [flamendless/arson.lua](https://github.com/flamendless/arson.lua): register custom data types that can be encoded and decoded for json.lua.
-- [rxi/classic](https://github.com/rxi/classic): tiny class module for lua
-- [rxi/json.lua](https://github.com/rxi/json.lua): json encoder/decoder
-- [usysrc/LICK](https://codeberg.org/usysrc/lick): live coding kit #1
-- [rxi/lume](https://github.com/rxi/lume): math lib
-- [rxi/lurker](https://github.com/rxi/lurker): live coding kit #2
-- [Ulydev/push](https://github.com/Ulydev/push): resolution control
-- [rxi/tick](https://github.com/rxi/tick): interval / delay
-- [kikito/tween.lua](https://github.com/kikito/tween.lua): tweening
+i made physics engine myself, so the game may have some annoying physics bugs.
 
-### made by myself
+development time: (almost) 2h 57m
 
-- rdtk.lua: modern LDTK loader for lua & love2d.
-- particle.lua: tiny particles module
-- camera.lua: tiny camera module
+**Made with love2d in 3 hours for trijam #352**
+
+## controls
+- drag on the blue blocks: move blue blocks
+- play button: start movement playback
